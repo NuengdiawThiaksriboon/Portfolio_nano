@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuengdiaw ThiakSriboon • Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        
+        body { font-family: 'Inter', system-ui, sans-serif; background: #050505; color: white; }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        
+        .glass { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+        }
+        
+        .glow-cyan { box-shadow: 0 0 50px -10px rgba(34, 211, 238, 0.506); }
+        
+        .badge-float { animation: float 8s ease-in-out infinite; }
+        @keyframes float { 
+            0%, 100% { transform: translateY(0) translateX(0); } 
+            50% { transform: translateY(-12px) translateX(4px); } 
+        }
+
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { 
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(34, 211, 238, 0.4);
+            transform: translateY(-6px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            h1 { font-size: 3.5rem; line-height: 1.1; }
+            h2 { font-size: 2.5rem; }
+            h3 { font-size: 1.8rem; }
+            .badge-float { display: none; } /* ซ่อน floating ในมือถือ */
+            .py-32 { padding-top: 6rem !important; padding-bottom: 6rem !important; }
+        }
+
+        @media (max-width: 768px) {
+            .max-w-7xl { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
+            .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center text-lg sm:text-xl font-bold logo-font glow-cyan text-black">N</div>
+                <div class="text-xl sm:text-2xl font-bold logo-font tracking-tighter">Nuengdiaw</div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav id="desktop-nav" class="hidden lg:flex gap-6 xl:gap-10 text-sm font-medium uppercase tracking-wider text-gray-300">
+                <a href="#about" class="hover:text-cyan-400 transition">About</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">Experience</a>
+                <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+            </nav>
+
+            <!-- Mobile Hamburger -->
+            <div class="lg:hidden flex items-center gap-4">
+                <a href="mailto:nanoone342@gmail.com" class="px-5 py-2 bg-white text-black text-xs sm:text-sm font-bold rounded-full hover:bg-cyan-400 transition">Hire Me</a>
+                <buttons id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </buttons>
+            </div>
+
+            <!-- Desktop Buttons -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#" class="px-6 py-2.5 glass rounded-full text-sm font-bold hover:bg-white/10 transition">RESUME</a>
+                <a href="mailto:nanoone342@gmail.com" class="px-6 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-cyan-400 transition">HIRE ME</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black/95 border-t border-white/10">
+            <nav class="flex flex-col items-center py-6 gap-6 text-lg font-medium">
+                <a href="#about" class="hover:text-cyan-400 transition">About</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">Experience</a>
+                <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="min-h-screen relative flex items-center justify-center pt-24 pb-16 px-4 sm:px-6">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-500/10 blur-[60px] sm:blur-[120px] rounded-full"></div>
+
+        <!-- Floating Skills Badges - ครบ 7 อัน ซ่อนในมือถือ -->
+        <div class="absolute inset-0 pointer-events-none hidden sm:block">
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute top-28 left-8">
+                <i class="fab fa-html5 text-[#e34f26]"></i> HTML5
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute top-52 right-8" style="animation-delay: 0.8s;">
+                <i class="fab fa-css3-alt text-[#1572b6]"></i> CSS
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute top-80 left-20" style="animation-delay: 1.6s;">
+                <i class="fab fa-js text-[#f0db4f]"></i> JavaScript
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute bottom-80 right-12" style="animation-delay: 2.2s;">
+                <i class="fab fa-bootstrap text-[#7952b3]"></i> Bootstrap
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute bottom-20 right-12" style="animation-delay: 2.2s;">
+                <i class="fab fa-react text-[#61dafb]"></i> React
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute bottom-52 left-12" style="animation-delay: 1.1s;">
+                <i class="fab fa-php text-[#787cb5]"></i> PHP
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute top-36 right-32" style="animation-delay: 2.8s;">
+                <i class="fas fa-database text-[#00758f]"></i> MySQL
+            </div>
+            <div class="badge-float glass px-5 py-3 rounded-3xl text-sm flex items-center gap-2 absolute bottom-72 left-52" style="animation-delay: 0.4s;">
+                <i class="fab fa-github text-white"></i> GitHub
+            </div>
+        </div>
+
+        <div class="max-w-5xl w-full text-center relative z-10 px-4">
+            <div class="inline-flex items-center gap-2 glass px-4 py-1.5 rounded-full mb-6 border-white/10">
+                <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                <span class="text-xs tracking-widest font-bold text-gray-300 uppercase">Available for Work</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold logo-font leading-tight tracking-tighter mb-6">
+                Building Digital<br>
+                <span class="bg-gradient-to-r from-cyan-400 via-white to-purple-500 bg-clip-text text-transparent italic">Experiences.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto leading-relaxed mb-8">
+                สวัสดีครับ ผมชื่อหนึ่งเดียว นักพัฒนาซอฟต์แวร์วัย 24 ปี เชี่ยวชาญ PHP, MySQL, JavaScript
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition">Explore My Work</a>
+                <a href="https://github.com/Nanomamama" class="px-8 py-4 glass font-bold rounded-xl hover:bg-white/10 transition flex items-center justify-center gap-2">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- ABOUT - Modern Premium Version -->
+<section id="about" class="py-24 sm:py-32 px-4 sm:px-6 relative overflow-hidden">
+    <!-- Background subtle glow -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-gradient-radial from-purple-500/5 via-cyan-500/5 to-transparent blur-3xl"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-16 sm:mb-24">
+            <h2 class="text-sm sm:text-base font-bold tracking-[0.4em] text-cyan-400/80 uppercase mb-4">About Me</h2>
+            <h3 class="text-4xl sm:text-5xl md:text-6xl font-bold logo-font tracking-tight mb-6">
+                <span class="bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">Nuengdiaw ThiakSriboon</span>
+            </h3>
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+                Software Developer วัย 24 ปี | จากมหาสารคาม | กำลังศึกษาปริญญาตรี สาขาวิทยาการคอมพิวเตอร์ ม.ราชภัฏเลย  
+                หลงใหลการเขียนโค้ดที่สะอาด อ่านง่าย และแก้ปัญหาได้จริง เชี่ยวชาญ PHP + MySQL เป็นหลัก พร้อม JavaScript, Bootstrap และระบบอัตโนมัติ
+            </p>
+        </div>
+
+        <!-- Timeline-style Content -->
+        <div class="relative">
+            <!-- Vertical line -->
+            <div class="absolute left-4 sm:left-1/2 h-full w-0.5 bg-gradient-to-b from-cyan-500/30 to-purple-500/30 transform sm:-translate-x-1/2"></div>
+
+            <!-- Background / Intro -->
+            <div class="relative mb-16 sm:mb-15 flex flex-col sm:flex-row sm:items-start sm:gap-12">
+                <div class="sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1">
+                    <div class="glass rounded-3xl p-8 sm:p-10 card-hover relative">
+                        <div class="absolute -top-5 -left-5 sm:-left-auto sm:-right-5 w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center shadow-lg">
+                            <i class="fas fa-user-graduate text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl sm:text-3xl font-bold logo-font mb-6 text-left sm:text-right">Background</h4>
+                        <p class="text-gray-300 leading-relaxed text-base sm:text-lg">
+                            เริ่มต้นจากการเรียนรู้ด้วยตัวเองตั้งแต่สมัยมัธยม  
+                            ปัจจุบันกำลังศึกษาต่อระดับปริญญาตรี และมีประสบการณ์พัฒนาระบบจริง  
+                            ทั้ง Training Management และ Queue Booking System  
+                            เชื่อว่าโค้ดที่ดีคือโค้ดที่ทำให้ชีวิตคนอื่นง่ายขึ้น
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dot on timeline -->
+                <div class="hidden sm:block absolute left-1/2 top-10 w-5 h-5 rounded-full bg-cyan-500 border-4 border-black z-10 transform -translate-x-1/2"></div>
+
+                <!-- Strengths -->
+                <div class="sm:w-1/2 sm:pl-12 order-1 sm:order-2">
+                    <div class="glass rounded-3xl p-8 sm:p-10 card-hover relative">
+                        <div class="absolute -top-5 left-5 sm:left-auto sm:-right-5 w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center shadow-lg">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl sm:text-3xl font-bold logo-font mb-6">สิ่งที่ผมทำได้ดี</h4>
+                        <ul class="space-y-5 text-gray-300 text-base sm:text-lg">
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cyan-400 text-xl mt-1 flex-shrink-0"></i>
+                                <span>พัฒนาระบบ Backend ที่เสถียรและปลอดภัย (PHP + MySQL)</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cyan-400 text-xl mt-1 flex-shrink-0"></i>
+                                <span>ออกแบบ UI/UX ที่ responsive และใช้งานง่าย</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cyan-400 text-xl mt-1 flex-shrink-0"></i>
+                                <span>เขียนโค้ดที่สะอาด อ่านง่าย และ maintain ได้ดี</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cyan-400 text-xl mt-1 flex-shrink-0"></i>
+                                <span>แก้ปัญหาเชิงระบบและ automate งานซ้ำ ๆ อย่างมีประสิทธิภาพ</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                <div class="glass rounded-2xl p-6 sm:p-8 transition-all hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(34,211,238,0.3)]">
+                    <div class="text-4xl sm:text-5xl font-bold text-cyan-400 mb-2">24</div>
+                    <p class="text-sm sm:text-base text-gray-400">อายุ</p>
+                </div>
+                <div class="glass rounded-2xl p-6 sm:p-8 transition-all hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]">
+                    <div class="text-4xl sm:text-5xl font-bold text-purple-400 mb-2">2+</div>
+                    <p class="text-sm sm:text-base text-gray-400">โปรเจกต์จริง</p>
+                </div>
+                <div class="glass rounded-2xl p-6 sm:p-8 transition-all hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)]">
+                    <div class="text-4xl sm:text-5xl font-bold text-emerald-400 mb-2">2023–2027</div>
+                    <p class="text-sm sm:text-base text-gray-400">กำลังศึกษา</p>
+                </div>
+                <div class="glass rounded-2xl p-6 sm:p-8 transition-all hover:scale-105 hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)]">
+                    <div class="text-4xl sm:text-5xl font-bold text-pink-400 mb-2">TH</div>
+                    <p class="text-sm sm:text-base text-gray-400">สัญชาติ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- PROJECTS (มีปุ่ม Preview) -->
+    <section id="projects" class="py-20 sm:py-32 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-sm font-bold tracking-widest text-cyan-400 uppercase mb-3">Project Experience</h2>
+                <h3 class="text-4xl sm:text-5xl font-bold logo-font">Recent Works</h3>
+            </div>
+
+            <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                <!-- โหลดด้วย JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 sm:py-32 px-4 sm:px-6 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-sm font-bold tracking-widest text-cyan-400 uppercase mb-3">Technical Skills</h2>
+                <h3 class="text-4xl sm:text-5xl font-bold logo-font">Core Competencies</h3>
+            </div>
+
+            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                <!-- โหลดด้วย JS -->
+            </div>
+        </div>
+    </section>
+
+<!-- CONTACT - Modern & Premium Version -->
+<section id="contact" class="py-24 sm:py-32 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-black/0 to-black/40">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-radial from-cyan-500/5 to-transparent blur-3xl"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-16 sm:mb-20">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold logo-font tracking-tight mb-4">
+                <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Let's Connect</span>
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+                พร้อมให้คำปรึกษา รับงานฟรีแลนซ์ หรือแค่คุยเรื่องโค้ด ส่งข้อความมาได้เลยครับ
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-16">
+            <!-- Phone -->
+            <div class="group relative glass rounded-3xl p-8 sm:p-10 text-center transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_-10px_rgba(34,211,238,0.3)]">
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                        <i class="fas fa-phone-volume text-cyan-400 text-3xl sm:text-4xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold mb-2">โทรศัพท์</h4>
+                    <a href="tel:0651078576" class="text-xl sm:text-2xl font-mono text-cyan-300 hover:text-cyan-200 transition">
+                        065-107-8576
+                    </a>
+                    <p class="text-sm text-gray-500 mt-3">9:00 – 22:00 น. ทุกวัน</p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="group relative glass rounded-3xl p-8 sm:p-10 text-center transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_-10px_rgba(168,85,247,0.3)]">
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                        <i class="fas fa-envelope-open-text text-purple-400 text-3xl sm:text-4xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold mb-2">อีเมล</h4>
+                    <a href="mailto:nanoone342@gmail.com" class="text-lg sm:text-xl font-mono text-purple-300 hover:text-purple-200 transition break-all">
+                        nanoone342@gmail.com
+                    </a>
+                    <p class="text-sm text-gray-500 mt-3">ตอบกลับภายใน 24 ชม.</p>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="group relative glass rounded-3xl p-8 sm:p-10 text-center transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_40px_-10px_rgba(16,185,129,0.3)]">
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
+                        <i class="fas fa-map-marker-alt text-emerald-400 text-3xl sm:text-4xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-bold mb-2">ที่อยู่</h4>
+                    <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+                        74/4 หมู่ 10 ต.ดอนพยอม<br>
+                        อ.โนนแดง จ.มหาสารคาม 44130
+                    </p>
+                    <p class="text-xs text-gray-500 mt-3">ประเทศไทย</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links + Quick Message -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-16">
+            <div class="flex gap-6">
+                <a href="https://github.com/Nanomamama" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="#" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://line.me/ti/p/~yourlineid" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition">
+                    <i class="fab fa-line text-2xl"></i>
+                </a>
+            </div>
+            <a href="mailto:nanoone342@gmail.com" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-full hover:opacity-90 transition flex items-center gap-3 shadow-lg">
+                <i class="fas fa-paper-plane"></i> ส่งข้อความด่วน
+            </a>
+        </div>
+
+        <!-- Optional: Minimal Contact Form -->
+        <div class="max-w-2xl mx-auto glass rounded-3xl p-8 sm:p-12">
+            <h4 class="text-2xl font-bold text-center mb-8">ส่งข้อความถึงผม</h4>
+            <form class="space-y-6">
+                <input type="text" placeholder="ชื่อของคุณ" class="w-full glass px-6 py-4 rounded-xl focus:outline-none focus:border-cyan-400 transition">
+                <input type="email" placeholder="อีเมล" class="w-full glass px-6 py-4 rounded-xl focus:outline-none focus:border-cyan-400 transition">
+                <textarea placeholder="ข้อความ..." rows="4" class="w-full glass px-6 py-4 rounded-xl focus:outline-none focus:border-cyan-400 transition"></textarea>
+                <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold py-4 rounded-xl hover:opacity-90 transition">
+                    ส่งข้อความ
+                </button>
+            </form>
+            <p class="text-center text-sm text-gray-500 mt-6">
+                หรือส่งตรงมาที่ nanoone342@gmail.com ได้เลยครับ
+            </p>
+        </div>
+    </div>
+</section>
+
+    <footer class="py-12 sm:py-20 text-center border-t border-white/5 text-sm text-gray-500">
+        © 2026 Nuengdiaw ThiakSriboon. Built with Tailwind & Passion.
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+    <!-- โหลดข้อมูลทั้งหมด -->
+    <script>
+        // Default Projects (เพิ่ม previewUrl)
+        const defaultProjects = [
+            {
+                title: "NextLRU - Training System",
+                role: "Co-Developer",
+                period: "02/2026 - Present",
+                desc: "ระบบบริหารจัดการการฝึกอบรมครบวงจร พัฒนาด้วย PHP และ MySQL รวมระบบแจ้งเตือนผ่าน Email อัตโนมัติ, CRUD สำหรับผู้ดูแล และการจัดการผู้เข้าร่วมอบรม",
+                tech: "PHP • MySQL • PHPMailer • JavaScript",
+                image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+                previewUrl: "#"
+            },
+            {
+                title: "Queue Booking System",
+                role: "Full Stack Developer",
+                period: "05/2025 - Present",
+                desc: "ระบบจองคิวออนไลน์สำหรับศูนย์เรียนรู้ รองรับการอัปโหลดสลิป, แจ้งเตือนอัตโนมัติ, JSON API และการติดตามสถานะแบบเรียลไทม์",
+                tech: "Full Stack • PHP • MySQL • JSON API • GitHub",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+                previewUrl: "#"
+            }
+        ];
+
+        // Default Skills
+        const defaultSkills = [
+            { name: "HTML5", icon: "fab fa-html5", color: "#e34f26" },
+            { name: "CSS", icon: "fab fa-css3-alt", color: "#1572b6" },
+            { name: "JavaScript", icon: "fab fa-js", color: "#f0db4f" },
+            { name: "Bootstrap", icon: "fab fa-bootstrap", color: "#7952b3" },
+            { name: "React", icon: "fab fa-react", color: "#61dafb" },
+            { name: "PHP", icon: "fab fa-php", color: "#787cb5" },
+            { name: "MySQL", icon: "fas fa-database", color: "#00758f" },
+            { name: "GitHub", icon: "fab fa-github", color: "#ffffff" }
+        ];
+
+        function loadProjects() {
+            const savedData = JSON.parse(localStorage.getItem('portfolioData')) || {};
+            let savedProjects = savedData.projects || [];
+
+            const projectMap = new Map();
+            defaultProjects.forEach(p => projectMap.set(p.title, p));
+            savedProjects.forEach(p => projectMap.set(p.title, p));
+
+            const projects = Array.from(projectMap.values());
+
+            const container = document.getElementById('projects-grid');
+            container.innerHTML = '';
+
+            if (projects.length === 0) {
+                container.innerHTML = '<div class="col-span-2 text-center py-20 text-gray-400 text-xl">ยังไม่มีผลงาน ไปเพิ่มที่ Admin ได้เลย</div>';
+                return;
+            }
+
+            projects.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'glass rounded-[2rem] overflow-hidden card-hover flex flex-col h-full relative group';
+
+                let previewButton = '';
+                if (p.previewUrl) {
+                    previewButton = `
+                        <a href="${p.previewUrl}" target="_blank" rel="noopener noreferrer"
+                           class="absolute bottom-6 right-6 z-10 bg-cyan-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-cyan-600 shadow-lg">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="h-64 sm:h-72 overflow-hidden relative">
+                        <img src="${p.image}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700" alt="${p.title}">
+                    </div>
+                    <div class="p-8 sm:p-10 flex flex-col flex-grow text-left">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="px-3 py-1 bg-cyan-400/10 text-cyan-400 text-xs sm:text-[10px] font-bold tracking-widest rounded-full uppercase border border-cyan-400/20">${p.role || 'Developer'}</span>
+                            <span class="text-gray-500 text-xs sm:text-sm font-mono">${p.period || 'N/A'}</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 logo-font">${p.title}</h3>
+                        <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-8 flex-grow">${p.desc || 'คำอธิบายโปรเจกต์'}</p>
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                            <span class="text-xs sm:text-[10px] font-mono text-gray-500 uppercase tracking-tighter">${p.tech || 'N/A'}</span>
+                            <i class="fas fa-external-link-alt text-gray-600 text-xs sm:text-sm"></i>
+                        </div>
+                    </div>
+                    ${previewButton}
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function loadSkills() {
+            const savedData = JSON.parse(localStorage.getItem('portfolioData')) || {};
+            let skills = savedData.skills || defaultSkills;
+
+            if (skills.length > 0 && typeof skills[0] === 'string') {
+                skills = skills.map(name => ({ name, icon: 'fas fa-code', color: '#22d3ee' }));
+            }
+
+            const container = document.getElementById('skills-grid');
+            container.innerHTML = '';
+
+            skills.forEach(skill => {
+                const item = document.createElement('div');
+                item.className = 'glass rounded-2xl p-6 sm:p-8 text-center card-hover flex flex-col items-center justify-center h-full';
+                item.innerHTML = `
+                    <i class="${skill.icon || 'fas fa-code'} text-4xl sm:text-5xl mb-4 sm:mb-6" style="color: ${skill.color || '#22d3ee'}"></i>
+                    <h4 class="text-lg sm:text-xl font-bold mb-2">${skill.name}</h4>
+                    <p class="text-xs sm:text-sm text-gray-500">${skill.level || 'Advanced'}</p>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        window.onload = () => {
+            loadProjects();
+            loadSkills();
+        };
+    </script>
+</body>
+</html>
