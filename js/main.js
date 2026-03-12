@@ -24,7 +24,8 @@ const defaultProjects = [
       "NextLRU4.png",
       "NextLRU5.png",
     ],
-    previewUrl: "#",
+    previewUrl: "https://nextlru.lru.ac.th",
+    codeUrl: "https://github.com/NuengdiawThiaksriboon/Next_LRU",
   },
   {
     title: "Queue Booking System",
@@ -40,6 +41,7 @@ const defaultProjects = [
       
     ],
     previewUrl: "#",
+    codeUrl: "https://github.com/Nanomamama/mango__db",
   },
 ];
 
@@ -79,7 +81,7 @@ function loadProjects() {
     card.className =
       "glass rounded-[2rem] overflow-hidden card-hover flex flex-col h-full relative group reveal-on-scroll";
 
-    let previewButton = "";
+    let actionButtons = "";
 
     // Build image slider area. If `p.images` is an array, use it; otherwise fall back to `p.image`.
     const imagesArray = Array.isArray(p.images)
@@ -105,20 +107,41 @@ function loadProjects() {
             </div>
           `;
 
-    // If project has images, show preview button that opens lightbox
+    // Build action buttons and place them inside one absolute container with 1rem gap (`gap-4`)
+    const buttons = [];
+
     if (imagesArray.length > 0) {
-      previewButton = `
-        <button type="button" data-images='${imagesJson}' class="project-preview-btn absolute bottom-6 right-6 z-10 bg-cyan-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-cyan-600 shadow-lg">
-          <i class="fas fa-eye"></i> Preview
+      buttons.push(`
+        <button type="button" data-images='${imagesJson}' class="project-preview-btn bg-cyan-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors duration-200 hover:bg-cyan-600 shadow-lg">
+          <i class="fas fa-eye"></i> Image 
         </button>
-      `;
-    } else if (p.previewUrl) {
-      previewButton = `
-        <a href="${p.previewUrl}" target="_blank" rel="noopener noreferrer"
-           class="absolute bottom-6 right-6 z-10 bg-cyan-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-cyan-600 shadow-lg">
-            <i class="fas fa-eye"></i> Preview
+      `);
+    }
+
+    if (p.previewUrl) {
+      buttons.push(`
+        <a href="${p.previewUrl}" target="_blank" rel="noopener noreferrer" class="project-visit-btn bg-green-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors duration-200 hover:bg-green-600 shadow-lg">
+            <i class="fas fa-external-link-alt"></i> Web Site
         </a>
+      `);
+    }
+
+    if (p.codeUrl) {
+      buttons.push(`
+        <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="project-code-btn bg-gray-800/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors duration-200 hover:bg-gray-900 shadow-lg">
+            <i class="fab fa-github"></i> Code
+        </a>
+      `);
+    }
+
+    if (buttons.length) {
+      actionButtons = `
+        <div class="project-actions absolute bottom-6 right-6 z-10 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          ${buttons.join('\n')}
+        </div>
       `;
+    } else {
+      actionButtons = '';
     }
 
     card.innerHTML = `
@@ -135,7 +158,7 @@ function loadProjects() {
                 <i class="fas fa-external-link-alt text-gray-600 text-xs sm:text-sm"></i>
               </div>
             </div>
-            ${previewButton}
+            ${actionButtons}
           `;
 
     container.appendChild(card);
