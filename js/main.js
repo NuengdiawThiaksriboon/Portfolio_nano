@@ -112,7 +112,7 @@ function loadProjects() {
 
     if (imagesArray.length > 0) {
       buttons.push(`
-        <button type="button" data-images='${imagesJson}' class="project-preview-btn bg-cyan-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors duration-200 hover:bg-cyan-600 shadow-lg">
+        <button type="button" data-images='${imagesJson}' class="project-preview-btn bg-cyan-500/90 text-white px-3 py-2 rounded-full text-xs sm:px-5 sm:py-2.5 sm:text-sm font-medium flex items-center gap-2 justify-center w-full sm:w-auto transition-colors duration-200 hover:bg-cyan-600 shadow-lg">
           <i class="fas fa-eye"></i> Image 
         </button>
       `);
@@ -120,7 +120,7 @@ function loadProjects() {
 
     if (p.previewUrl) {
       buttons.push(`
-        <a href="${p.previewUrl}" target="_blank" rel="noopener noreferrer" class="project-visit-btn bg-green-500/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors duration-200 hover:bg-green-600 shadow-lg">
+        <a href="${p.previewUrl}" target="_blank" rel="noopener noreferrer" class="project-visit-btn bg-green-500/90 text-white px-3 py-2 rounded-full text-xs sm:px-5 sm:py-2.5 sm:text-sm font-medium flex items-center gap-2 justify-center w-full sm:w-auto transition-colors duration-200 hover:bg-green-600 shadow-lg">
             <i class="fas fa-external-link-alt"></i> Web Site
         </a>
       `);
@@ -128,15 +128,16 @@ function loadProjects() {
 
     if (p.codeUrl) {
       buttons.push(`
-        <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="project-code-btn bg-gray-800/90 text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 transition-colors duration-200 hover:bg-gray-900 shadow-lg">
+        <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="project-code-btn bg-gray-800/90 text-white px-3 py-2 rounded-full text-xs sm:px-5 sm:py-2.5 sm:text-sm font-medium flex items-center gap-2 justify-center w-full sm:w-auto transition-colors duration-200 hover:bg-gray-900 shadow-lg">
             <i class="fab fa-github"></i> Code
         </a>
       `);
     }
 
     if (buttons.length) {
+      // Responsive action container: centered on small screens, positioned bottom-right on larger screens.
       actionButtons = `
-        <div class="project-actions absolute bottom-6 right-6 z-10 flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div class="project-actions absolute bottom-4 left-1/2 -translate-x-1/2 right-auto sm:left-auto sm:translate-x-0 sm:right-6 sm:bottom-6 z-10 flex flex-wrap items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           ${buttons.join('\n')}
         </div>
       `;
