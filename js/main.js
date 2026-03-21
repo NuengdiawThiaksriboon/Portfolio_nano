@@ -43,6 +43,27 @@ const defaultProjects = [
     previewUrl: "#",
     codeUrl: "https://github.com/Nanomamama/mango__db",
   },
+  {
+    title: "Teacher Professional Development Network System",
+    role: "Web Developer (Frontend Focus)",
+    period: "2/2025 - 2/2025",
+    desc: "ระบบสืบค้นและจัดการข้อมูลเครือข่ายพัฒนาวิชาชีพครู สำหรับคณะครุศาสตร์ มหาวิทยาลัยราชภัฏเลย รองรับการค้นหาข้อมูลโรงเรียนเครือข่าย, ระบบสมาชิก (Register/Login) และส่วนจัดการข้อมูลโปรไฟล์ผู้ใช้",
+    tech: "HTML5 • CSS3 • JavaScript • Bootstrap (CDN) • UI Design • GitHub",
+    images: [
+      "Teacher.png",
+      "Teacher1.png",
+      "Teacher2.png", 
+      "Teacher3.png",
+      "Teacher4.png",
+      "Teacher5.png",
+      "Teacher6.png",
+      "Teacher7.png",
+      "Teacher8.png",
+      
+    ],
+    previewUrl: "#",
+    codeUrl: "https://github.com/Nanomamama/admin_form",
+  },
 ];
 
 // Default Skills
