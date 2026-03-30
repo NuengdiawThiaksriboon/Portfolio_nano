@@ -61,7 +61,7 @@ const defaultProjects = [
       "Teacher8.png",
       
     ],
-    previewUrl: "#",
+    previewUrl: "http://network.edu-lru.com",
     codeUrl: "https://github.com/Nanomamama/admin_form",
   },
 ];
