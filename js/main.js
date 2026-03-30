@@ -147,13 +147,13 @@ function loadProjects() {
       `);
     }
 
-    if (p.codeUrl) {
-      buttons.push(`
-        <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="project-code-btn bg-gray-800/90 text-white px-3 py-2 rounded-full text-xs sm:px-5 sm:py-2.5 sm:text-sm font-medium flex items-center gap-2 justify-center w-full sm:w-auto transition-colors duration-200 hover:bg-gray-900 shadow-lg">
-            <i class="fab fa-github"></i> Code
-        </a>
-      `);
-    }
+    // if (p.codeUrl) {
+    //   buttons.push(`
+    //     <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="project-code-btn bg-gray-800/90 text-white px-3 py-2 rounded-full text-xs sm:px-5 sm:py-2.5 sm:text-sm font-medium flex items-center gap-2 justify-center w-full sm:w-auto transition-colors duration-200 hover:bg-gray-900 shadow-lg">
+    //         <i class="fab fa-github"></i> Code
+    //     </a>
+    //   `);
+    // }
 
     if (buttons.length) {
       // Responsive action container: centered on small screens, positioned bottom-right on larger screens.
