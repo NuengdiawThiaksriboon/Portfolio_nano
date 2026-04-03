@@ -64,6 +64,26 @@ const defaultProjects = [
     previewUrl: "http://network.edu-lru.com",
     codeUrl: "https://github.com/Nanomamama/admin_form",
   },
+  {
+    title: "Loei Explorer Atlas | คู่มือเที่ยวเลย",
+    role: "Full Stack Developer",
+    period: "4/2026 - 4/2026",
+    desc: "เว็บแอปพลิเคชันจัดการข้อมูลสถานที่ท่องเที่ยวในจังหวัดเลยแบบไดนามิก พัฒนาระบบหลังบ้านด้วย PHP สำหรับบริหารจัดการข้อมูลผ่าน JSON ไฟล์ มีระบบ Admin Dashboard เพื่อควบคุมการเพิ่ม/ลบ/แก้ไขเนื้อหาและรูปภาพ พร้อมหน้า Analytics สำหรับแสดงผลสถิติการเข้าชมข้อมูลในรูปแบบที่เข้าใจง่าย และรองรับการทำงานบน Container ด้วย Docker",
+    tech: "PHP • JSON Database • JavaScript • Bootstrap • Docker • GitHub",
+    images: [
+      "Loei1.png",
+      "Loei3.png",
+      "Loei4.png",
+      "Loei5.png",
+      "Loei6.png",
+      "Loei7.png",
+      "Loei8.png",
+      "Loei9.png",
+      "Loei10.png",
+    ],
+    previewUrl: "https://loei-explorer-atlas.onrender.com",
+    codeUrl: "https://github.com/Nanomamama/admin_form",
+},
 ];
 
 // Default Skills
