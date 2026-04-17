@@ -92,7 +92,6 @@ const defaultProjects = [
     tech: "Deep Learning (EfficientNetV2) • PHP • FastAPI • JavaScript • Bootstrap • Cloud API Integration • Docker • GitHub",
     images: [
       "Mango-model.png",
-      "Mango-model1.png",
       "Mango-model2.png",
       "Mango-model3.png",
       "Mango-model4.png",
