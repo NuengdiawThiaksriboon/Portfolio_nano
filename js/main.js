@@ -83,7 +83,29 @@ const defaultProjects = [
     ],
     previewUrl: "https://loei-explorer-atlas.onrender.com",
     codeUrl: "https://github.com/Nanomamama/admin_form",
-},
+  },
+  {
+    title: "แยกสายพันธุ์มะม่วงด้วยเทคโนโลยี AI Deep Learning",
+    role: "Full Stack Developer",
+    period: "1/2026 - 4/2026",
+    desc: "พัฒนาระบบ AI อัจฉริยะเพื่อจำแนกสายพันธุ์มะม่วงไทย 7 สายพันธุ์ โดยใช้ EfficientNetV2 ในการประมวลผล Deep Learning เพื่อยกระดับการบริหารจัดการผลผลิตทางการเกษตร ออกแบบระบบ Full-stack ด้วย PHP เชื่อมต่อกับ FastAPI ผ่าน API เพื่อการทำนายผลแบบ Real-time จัดการโครงสร้างข้อมูลและฐานความรู้มะม่วง (Knowledge Base) แบบ Responsive รองรับการใช้งานผ่านทุกอุปกรณ์ พร้อมทำ Deployment เต็มรูปแบบบน Cloud Infrastructure",
+    tech: "Deep Learning (EfficientNetV2) • PHP • FastAPI • JavaScript • Bootstrap • Cloud API Integration • Docker • GitHub",
+    images: [
+      "Mango-model.png",
+      "Mango-model1.png",
+      "Mango-model2.png",
+      "Mango-model3.png",
+      "Mango-model4.png",
+      "Mango-model5.png", 
+      "Mango-model6.png",
+      "Mango-model7.png",
+      "Mango-model8.png",
+      "Mango-model9.png",
+      "Mango-model10.png",
+    ],
+    previewUrl: "#",
+    codeUrl: "https://github.com/Nanomamama/AI-Deep-Learning",
+  },
 ];
 
 // Default Skills
