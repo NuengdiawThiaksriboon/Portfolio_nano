@@ -102,7 +102,7 @@ const defaultProjects = [
       "Mango-model9.png",
       "Mango-model10.png",
     ],
-    previewUrl: "#",
+    previewUrl: "https://mangoloei.lru.ac.th/index.php",
     codeUrl: "https://github.com/Nanomamama/AI-Deep-Learning",
   },
 ];
